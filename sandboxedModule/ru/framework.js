@@ -24,7 +24,32 @@ var context = {
  
 context.global = context;
 var sandbox = vm.createContext(context);
+
 var cmdArguments = process.argv;
+var wraperConsoleFunc = console.log;
+var file = process.argv[3];
+
+var date = new Date();
+
+
+console.log = function (message) {     
+    
+    var inputText;
+    inputText += cmdArguments[0] + '\0';
+    inputText += date            + '\0';
+    inputText += message;
+    
+    fs.writeFile(file, inputText);
+} 
+
+// console.log = function (message) {     
+    
+//     wraperConsoleFunc(cmdArguments[0]);
+//     wraperConsoleFunc(date);
+//     wraperConsoleFunc(message);
+//}
+
+
 
 
 for (var i = 0; i < cmdArguments.length; i++) {    
