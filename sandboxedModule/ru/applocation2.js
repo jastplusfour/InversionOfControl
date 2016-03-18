@@ -3,7 +3,7 @@
 // кусочком фреймворка. Читайте README.md в нем задания.
 
 // Вывод из глобального контекста модуля
-console.log('From application global context');
+console.log('From application 2');
 
 module.exports = function() {
   // Вывод из контекста экспортируемой функции
