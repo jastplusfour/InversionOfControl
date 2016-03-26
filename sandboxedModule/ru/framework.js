@@ -50,6 +50,22 @@ console.log = function (message) {
 //}
 
 
+var logFile = 'logFile.txt';
+var requireWithLogging = function (moduleName) {
+    
+    fs.appendFile(
+        logFile, 
+        
+        util.format(
+            '%s %s \n',
+             new Date().toTimeString(), 
+             moduleName)
+     );  
+ 
+    return require(moduleName); 
+}
+
+
 
 
 for (var i = 0; i < cmdArguments.length; i++) {    
