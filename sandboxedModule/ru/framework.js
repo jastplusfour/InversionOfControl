@@ -17,7 +17,8 @@ var context = {
     setTimeout: setTimeout,
     setInterval: setInterval,
     
-    util: util
+    util: util,
+    require : requireWithLogging
     
  };
  
